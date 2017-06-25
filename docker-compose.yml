@@ -1,7 +1,7 @@
 version: '2'
 services:
   unifi:
-    image: andrewglass3/unifi5.3.5-stable-candidate
+    image: andrewglass3/unifi5
     ports:
     - "8081:8081"
     - "8080:8080"
@@ -10,4 +10,5 @@ services:
     - "3478:3478"
     restart: always
     volumes:
-    - /opt/docker/unifiSC:/var/lib/unifi:rw
+            - /mnt/docker/unifi/data:/var/lib/unifi
+            - /mnt/docker/unifi/logs:/var/log/unifi 
